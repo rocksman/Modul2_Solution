@@ -1,0 +1,45 @@
+<html lang="en" ng-app="ShoppingListCheckOff">
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="angular.min.js"></script>
+    <script src="app1.js"></script>
+    <style>
+      .Message{
+        font-weight: bold;
+        color: red;
+        font-size: 1.2em;
+      }
+    </style>
+  </head>
+<body>
+  <div class="container">
+    <h1> Shopping List </h1>
+    <div class= "row">
+      <div class="col-md-6" ng-controller = 'ToBuyController as List1'>
+        <h2> To Buy: </h2>
+        <ul>
+          <li ng-repeat= "x in List1.items">
+            Buy {{x.quantity}} of {{x.name}}
+            <button ng-click= "List1.addItem(x.name, x.quantity); List1.removeItem($index);">Bought</button>
+          </li>
+        </ul>
+        <div ng-if="List1.errorMessage" class = "Message">{{List1.errorMessage}}</div>
+      </div>
+    </div>
+    <div class = "row">
+      <div class="col-mod-6" ng-controller = 'AlreadyBoughtController as List2'>
+        <h2> Already Bought: </h2>
+        <ul>
+          <li ng-repeat= "x in List2.items">
+            Bought {{x.quantity}} of {{x.name}}
+          </li>
+        </ul>
+        {{List2.Error1();}}
+        <div ng-show="List2.errorMessage" class = "Message">{{List2.errorMessage}}</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
