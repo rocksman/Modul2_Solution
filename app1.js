@@ -37,7 +37,9 @@
     var items = [
     {name: 'cookies', quantity: '2 bags'},
     {name: 'chips', quantity: '3 bags'},
-    {name: 'milk', quantity: '2 bottles'}
+    {name: 'milk', quantity: '2 bottles'},
+    {name: 'Sweets', quantity: '3 boxes'},
+    {name:'Coca-Cola', quantity: '2 bottles'}
   ];
     var items1 = [];
 
